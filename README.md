@@ -1,0 +1,1 @@
+Micro Habit Tracker is a REST API built with Spring Boot, Spring Data JPA, and MySQL. It provides endpoints to create, update, and delete habits, as well as manage timestamped habit logs. The project showcases strong backend design with data validation, error handling, and clean RESTful architecture, making it easy to integrate with frontend apps or third-party services.
