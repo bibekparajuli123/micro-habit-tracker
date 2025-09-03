@@ -16,11 +16,13 @@ public class HabitController {
     public HabitController(HabitService habitService) {
         this.habitService = habitService;
     }
+    //Get List of all Habits
     @GetMapping
     public List<Habit> getAllHabits() {
         return habitService.getAllHabits();
     }
 
+    //Get a Specific Habit by Id
     @GetMapping("/{id}")
     public ResponseEntity<Habit> getHabitById(@PathVariable long id) {
         return habitService.getHabitById(id)
@@ -28,11 +30,13 @@ public class HabitController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    //Create a new Habit
     @PostMapping
     public Habit  createHabit(@RequestBody Habit habit) {
         return habitService.createHabit(habit);
     }
 
+    //Update the existing Habit
     @PutMapping("/{id}")
     public ResponseEntity<Habit> updateHabitById(@PathVariable long id, @RequestBody Habit habit) {
         try{
@@ -43,6 +47,7 @@ public class HabitController {
         }
     }
 
+    //To Delete Specific Habit using Id
     @DeleteMapping("/{id}")
     public ResponseEntity<Habit> deleteHabitById(@PathVariable long id) {
             habitService.deleteHabit(id);
