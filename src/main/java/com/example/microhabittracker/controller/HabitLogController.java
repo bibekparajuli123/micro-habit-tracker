@@ -58,6 +58,7 @@ public class HabitLogController {
         }
     }
 
+    //Delete Specfific Habit Log
     @DeleteMapping("/{logId}")
     public ResponseEntity<Void> deleteLog(@PathVariable Long habitId, @PathVariable Long logId) {
         habitLogService.deleteHabitLog(logId);
